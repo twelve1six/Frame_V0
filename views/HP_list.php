@@ -1,10 +1,21 @@
 <ul>
+	<table>
+		<caption>병원별 병리 레포트 </caption>
+		<p class="p1">
+		<tr>
+			<td>병원</td><td>확인한 레포트</td><td>요청받은 레포트</td>
+		</tr>
+		</p>
 <?php
-foreach($HReports as $entry){
+	foreach($HReports as $entry){
 ?>
-    <li><a href="/index.php/topic/get/<?=$entry->id?>"><?=$entry->title?></a></li>
+	<tr>
+		<td></td>	
+	</tr>
+	
 <?php
-}
+	}
 ?>
+	</table>
 </ul>
 
