@@ -225,6 +225,7 @@
 				<ul>
 					REPORT
 				</ul>
+				<img src="./Report_sample.jpg" width="500"/>
 			</div>
 			<div class="image">
 				<ul>
@@ -274,8 +275,7 @@
 					COMMENT
 				</ul>
 				<form action="./proto1.php" method="POST">
-					<textarea rows="7" cols="67" align="right" name="comment">
-					<?php 
+					<textarea rows="7" cols="67" align="right" name="comment"><?php 
 					$serverName = "192.168.0.20,1433";
 					//기본 포트port 1433
 					$DB_USERID = "sa";
@@ -290,36 +290,19 @@
 						$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					} catch (Exception $e) {
 						echo $e -> getMessage();
-					}
-
+					}			
+					if($_POST['comment']!=null) {
 					try {
-						$stmt4 = $pdo -> prepare("UPDATE PHP_test3.dbo.TEST SET comment = :comment WHERE id = 14");
+							$stmt4 = $pdo -> prepare("UPDATE PHP_test3.dbo.TEST SET comment = :comment WHERE id = 14");
 
-						//$stmt2 -> bindParam(':id', 3);
-						$stmt4 -> bindParam(':comment', $_POST['comment']);
-						$stmt4 -> execute();
+							//$stmt2 -> bindParam(':id', 3);
+							$stmt4 -> bindParam(':comment', $_POST['comment']);
+							$stmt4 -> execute();
 
-					} catch(PDOException $e) {
-						echo $e -> getMessage();
+						} catch(PDOException $e) {
+							echo $e -> getMessage();
 					}
-				?>
-					<?php 
-					$serverName = "192.168.0.20,1433";
-					//기본 포트port 1433
-					$DB_USERID = "sa";
-					$DB_USERPW = "h890910)";
-					$DB_NAME = "PHP_test3";
-
-					try {
-						// MySQL PDO 객체 생성
-						// mysql을 다른 DB로 변경하면 다른 DB도 사용 가능
-						$pdo = new PDO("sqlsrv:Server=$serverName;Database=$DB_NAME", $DB_USERID, $DB_USERPW);
-						// 에러 출력
-						$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-					} catch (Exception $e) {
-						echo $e -> getMessage();
 					}
-
 					try {
 						$stmt3 = $pdo -> prepare("SELECT comment FROM TEST WHERE id = 14");
 						$stmt3 -> execute();
@@ -328,11 +311,11 @@
 						echo $row['comment'];
 					} catch(PDOException $e) {
 						echo $e -> getMessage();
-					}
-				?>
-					</textarea>
+					}					
+
+				?></textarea>
 					<br />
-					<input type="submit" value="save"/>
+					<input type="submit" value="save" right="100px"/>
 				</form>
 
 			</div>
