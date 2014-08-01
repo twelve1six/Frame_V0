@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="utf-8"/>
-                <title>CSS Reference</title>
-                <style type="text/css">
-                	div {
-                		width: 200px;
-                		height: 200px;
-                		background-color : #999;
-                		color: #fff;
-                	}
-                	,m50 {
-                		margin: 50px;
-                	}
-                	table {
-                		backgroud-color: #eee;
-                		width: 300px;
-                	}
-                	td {
-                		border: 1px solid #ccc;
-                		padding: 10px;
-                	}
-                	caption {
-                		caption-side: bottom;
-                	}
-                	.p1{
-                		font-weight: bold;	
-                	}
-                </style>
-            </head>
-            <body>
+    <html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<style type="text/css">
+			body {
+				font-size: 12px;
+			}
+			ul {
+				padding-left: 10px;
+			}
+			li {
+				list-style: none;
+				padding-top: 5px;
+			}
+			.wraper {
+				width: 1156px;
+			}
+			.navigation {
+				float: left;
+				width: 150px;
+				height: 602px;
+				border: 1px solid black;
+			}
+			.report {
+				float: left;
+				width: 500px;
+				height: 602px;
+				border: 1px solid green;
+			}
+			.image {
+				float: right;
+				width: 500px;
+				height: 400px;
+				border: 1px solid blue;
+			}
+			.comment {
+				float: right;
+				width: 500px;
+				height: 200px;
+				border: 1px solid blue;
+			}
+			.footer {
+				clear: both;
+				border: 1px solid purple;
+				height: 20px;
+			}
+		</style>
+	</head>
+	<body>
