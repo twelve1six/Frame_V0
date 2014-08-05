@@ -2,7 +2,7 @@
 				<ul>
 					COMMENT
 				</ul>
-				<form action="http://192.168.0.20:8087/index.php/sample" method="POST">
+				<form action="http://192.168.0.20:8087/index.php/sample" method="POST" accept-charset="UTF-8">					
 					<textarea rows="7" cols="67" align="right" name="comment"><?php
 						echo $comment;
 					?>

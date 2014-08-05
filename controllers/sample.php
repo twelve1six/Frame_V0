@@ -4,7 +4,8 @@ class Sample extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->database();
-		$this->load->model('sample_model');		
+		$this->load->model('sample_model');	
+		$this->load->helper('url');	
 	}
 	
 	public function index() {
@@ -53,10 +54,6 @@ class Sample extends CI_Controller {
 			'Rnum'=>$Rnum,
 			'Hname'=>$Hname,
 			'br'=>$br
-		);$data = array(
-			'Rnum'=>$Rnum,
-			'Hname'=>$Hname,
-			'br'=>$br
 		);
 		
 		$this->load->view('Hospital_Num', $data);
@@ -68,12 +65,12 @@ class Sample extends CI_Controller {
 		$fcode  = $this->sample_model->getImage($id);
 		$this->load->view('Image',$fcode);
 		
-		if($_POST) {
+		if($_POST!=null) {
 			$comment = $this->input->post('comment', TRUE);
-			$this->sample_model->updateComment($id, $comment);
+			$this->sample_model->updateComment($comment);
 			
-			// redirect('http://192.168.0.20:8087/index.php/sample');
-			// exit;
+			redirect('/sample');
+			exit;
 		}
 		
 		$comment = $this->sample_model->getComment($id);		

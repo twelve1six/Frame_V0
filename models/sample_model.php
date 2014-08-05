@@ -20,9 +20,10 @@ class Sample_model extends CI_Model {
 		return $this->db->get_where('TEST',array('id'=>$id))->row($fcode);	
 	}
 	
-	function updateComment($id, $comment) {
-		//column number of comment on table 'TEST'
-		$sql = "UPDATE PHP_test3.dbo.TEST SET comment = ".$comment." WHERE id = ".$id;
+	function updateComment($comment) {
+		// mb_convert_encoding($comment, 'EUC_KR', 'UTF-8');
+		//column number of comment on table 'TEST'		
+		$sql = "UPDATE PHP_test3.dbo.TEST SET comment = '".$comment."' WHERE id = 14";
 		$this->db->query($sql);	
 	}
 	
